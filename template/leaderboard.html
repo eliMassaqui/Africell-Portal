@@ -1,0 +1,10 @@
+ {% extends 'base.html' %}
+{% block content %}
+<h2>Ranking Global</h2>
+<ol>
+  {% for user in ranking %}
+  <li>{{ user.nome }} — {{ user.pontos }} pts</li>
+  {% endfor %}
+</ol>
+{% endblock %}
+

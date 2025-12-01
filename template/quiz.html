@@ -1,0 +1,31 @@
+ {% extends 'base.html' %}
+{% block content %}
+<h2>Quiz do Dia</h2>
+<div id="quiz-container"></div>
+<script>
+  const perguntas = {{ perguntas|tojson }};
+  let i = 0, score = 0;
+  const container = document.getElementById('quiz-container');
+
+  function mostrarPergunta() {
+    if (i < perguntas.length) {
+      const p = perguntas[i];
+      container.innerHTML = `<h3>${p.q}</h3>` + 
+        p.a.map((alt, idx) =>
+          `<button onclick="verificar(${idx})">${alt}</button>`
+        ).join('');
+    } else {
+      container.innerHTML = `<h3>Fim! Pontos: ${score}</h3>`;
+    }
+  }
+
+  function verificar(idx) {
+    if (idx === perguntas[i].correta) score += 10;
+    i++;
+    mostrarPergunta();
+  }
+
+  mostrarPergunta();
+</script>
+{% endblock %}
+
