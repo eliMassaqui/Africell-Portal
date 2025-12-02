@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Africell Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Africell Portal</h1>
+    <nav>
+      <a href="#" onclick="mostrarPagina('home')">Início</a>
+      <a href="#" onclick="mostrarPagina('quiz')">Quiz</a>
+      <a href="#" onclick="mostrarPagina('leaderboard')">Ranking</a>
+      <a href="#" onclick="mostrarPagina('profile')">Perfil</a>
+      <a href="#" onclick="logout()">Sair</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="pagina">
+      <h2>Bem-vindo ao Africell Portal</h2>
+      <p>Participe em quizzes, veja memes e suba no ranking!</p>
+      <button class="btn" onclick="mostrarPagina('register')">Criar Conta</button>
+      <button class="btn" onclick="mostrarPagina('login')">Entrar</button>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login" class="pagina" style="display:none;">
+      <h2>Entrar</h2>
+      <input type="text" id="login-user" placeholder="Nome de usuário">
+      <input type="password" id="login-pass" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+      <p><a href="#" onclick="mostrarPagina('register')">Criar conta</a></p>
+    </section>
+
+    <!-- REGISTRO -->
+    <section id="register" class="pagina" style="display:none;">
+      <h2>Criar Conta</h2>
+      <input type="text" id="reg-user" placeholder="Nome de usuário">
+      <input type="password" id="reg-pass" placeholder="Senha">
+      <button onclick="registrar()">Registrar</button>
+      <p><a href="#" onclick="mostrarPagina('login')">Já tenho conta</a></p>
+    </section>
+
+    <!-- PERFIL -->
+    <section id="profile" class="pagina" style="display:none;">
+      <h2>Perfil</h2>
+      <p><strong>Usuário:</strong> <span id="perfil-nome"></span></p>
+      <p><strong>Pontos:</strong> <span id="perfil-pontos"></span></p>
+      <p><strong>Nível:</strong> <span id="perfil-nivel"></span></p>
+      <p><strong>Badges:</strong> <span id="perfil-badges"></span></p>
+    </section>
+
+    <!-- RANKING -->
+    <section id="leaderboard" class="pagina" style="display:none;">
+      <h2>Ranking Global</h2>
+      <ol id="ranking-lista"></ol>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="pagina" style="display:none;">
+      <h2>Quiz Africell</h2>
+      <div id="quiz-container"></div>
+      <button onclick="iniciarQuiz()">Começar</button>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

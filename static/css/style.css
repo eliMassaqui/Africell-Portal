@@ -6,16 +6,12 @@ body {
 }
 
 header {
-  background: #8c2888; /* roxo Africell */
+  background: #8c2888;
   color: white;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-header h1 {
-  margin: 0;
 }
 
 nav a {
@@ -25,39 +21,22 @@ nav a {
   font-weight: bold;
 }
 
-main {
-  padding: 30px;
-}
+main { padding: 30px; }
 
-.btn {
-  background: #2ac1c1; /* azul/turquesa */
+.btn, button {
+  background: #2ac1c1;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-button {
-  background: #2ac1c1; /* azul/turquesa */
-  color: white;
-  padding: 10px 15px;
   border: none;
   margin: 5px;
-  border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button:hover, .btn:hover {
-  background: #ffd500; /* amarelo detalhes */
-  color: #8c2888; /* texto roxo */
-}
-
-h2, h3 {
+  background: #ffd500;
   color: #8c2888;
 }
 
-ol li {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
+h2, h3 { color: #8c2888; }

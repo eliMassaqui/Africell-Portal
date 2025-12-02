@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Africell Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Africell Portal</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">Início</a>
+      {% if session.get('usuario') %}
+        <a href="{{ url_for('profile', username=session['usuario']) }}">Perfil</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Entrar</a>
+        <a href="{{ url_for('register') }}">Criar Conta</a>
+      {% endif %}
+      <a href="{{ url_for('leaderboard') }}">Ranking</a>
+      <a href="{{ url_for('quiz') }}">Quiz</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
