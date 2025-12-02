@@ -1,8 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background: #fafafa;
+  background: #f9f9f9;
 }
 
 header {
@@ -19,24 +18,118 @@ nav a {
   margin-left: 20px;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.3s;
 }
 
-main { padding: 30px; }
+nav a:hover {
+  color: #ffd500;
+  transform: scale(1.1);
+}
 
-.btn, button {
-  background: #2ac1c1;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pagina {
+  display: none;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Perfil */
+#perfil-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+#perfil-container div {
+  background: #fff0f5;
+  padding: 10px 15px;
+  border-radius: 10px;
   margin: 5px;
+  text-align: center;
+  min-width: 100px;
+}
+
+/* Container do balatro */
+#balatro-lateral {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Grid de cartas */
+#cartas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  flex: 3;
+}
+
+/* Caixa de mensagens lateral */
+#mensagens {
+  flex: 1;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #fff0f5;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#mensagens div {
+  margin-bottom: 8px;
+  padding: 5px;
+  border-bottom: 1px solid #ffd50033;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+/* Cartas */
+.card {
+  width: 120px;
+  height: 80px;
+  color: #8c2888;
+  font-weight: bold;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card.comum { background: #ffd500; }
+.card.rara { background: #ffb800; }
+.card.epica { background: #ff0000; color: white; font-weight: bold; }
+.card.perigosa { background: #ccc; color: #666; }
+
+.card:hover {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 2px;
   font-weight: bold;
 }
 
-button:hover, .btn:hover {
-  background: #ffd500;
-  color: #8c2888;
-}
-
-h2, h3 { color: #8c2888; }
+.badge.bloqueado { background: #ccc; color: #666; }
+.badge.desbloqueado { background: #ffd500; color: #8c2888; }
+.badge.atual { background: #ff6f00; color: white; }
