@@ -4,6 +4,9 @@
 # Africell-Portal
 Em Produçao
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of cb422b7 (Update README.md)
+=======
 >>>>>>> parent of cb422b7 (Update README.md)
 =======
 >>>>>>> parent of cb422b7 (Update README.md)
